@@ -8,11 +8,23 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 	private FortuneService fortuneService;
 	
+//	@Autowired
+//	public TennisCoach(FortuneService fortuneService) {
+//		super();
+//		this.fortuneService = fortuneService;
+//	}
+	
+	public TennisCoach() {
+		System.out.println("inside TennisCoach: no-args constructor");
+	}
+	
 	@Autowired
-	public TennisCoach(FortuneService fortuneService) {
-		super();
+	public void setFortuneService(FortuneService fortuneService) {
 		this.fortuneService = fortuneService;
 	}
+
+
+
 
 	@Override
 	public String getDailyWorkout() {
