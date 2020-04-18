@@ -18,6 +18,10 @@
     <bean id="myCricketCoach" class="com.nitesh.springdemo.CricketCoach">
     	<!-- setup setter injection -->
     	<property name="fortuneService" ref="myFortune"></property>
+    	
+    	<!-- inject literal values -->
+    	<property name="emailAddress" value="abc@gmail.com"></property>
+    	<property name="team" value="India"></property>
     </bean>
 </beans>
 
