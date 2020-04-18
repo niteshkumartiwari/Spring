@@ -1,21 +1,21 @@
 package com.nitesh.springdemo;
 
-public class BaseballCoach implements Coach{
-	private FortuneService fortuneService;
-	
-	
-	public BaseballCoach(FortuneService fortuneService) {
+public class CricketCoach implements Coach{
+	FortuneService fortuneService;
+
+	public CricketCoach(FortuneService fortuneService) {
 		super();
 		this.fortuneService = fortuneService;
 	}
 
 	@Override
 	public String getDailyWorkout() {
-		return "Spend 30 minutes on batting practice";
+		return "Do batting and bowling for 4 hrs straight";
 	}
 
 	@Override
 	public String getDailyFortune() {
 		return fortuneService.getFortune();
 	}
+
 }
