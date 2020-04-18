@@ -48,3 +48,12 @@ The method can have any method name.
 
 Arguments
 The method can not accept any arguments. The method should be no-arg.
+
+================================================================
+
+Section 1.9.2: Autowired
+
+As of Spring Framework 4.3, an @Autowired annotation on such a constructor is no longer necessary if the target bean only defines one constructor to begin with. However, if several constructors are available, at least one must be annotated to teach the container which one to use.
+
+==================================================================
+
