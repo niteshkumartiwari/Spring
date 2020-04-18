@@ -15,6 +15,10 @@
     	<!-- setup constructor injection -->
     	<constructor-arg ref="myFortune"/>
     </bean>
+    <bean id="myCricketCoach" class="com.nitesh.springdemo.CricketCoach">
+    	<!-- setup setter injection -->
+    	<property name="fortuneService" ref="myFortune"></property>
+    </bean>
 </beans>
 
 

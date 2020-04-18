@@ -3,8 +3,12 @@ package com.nitesh.springdemo;
 public class CricketCoach implements Coach{
 	FortuneService fortuneService;
 
-	public CricketCoach(FortuneService fortuneService) {
-		super();
+	public CricketCoach() {
+		System.out.println("CricketCoach: inside no-args constructor");
+	}
+
+	public void setFortuneService(FortuneService fortuneService) {
+		System.out.println("CricketCoach: inside setter method");
 		this.fortuneService = fortuneService;
 	}
 
@@ -15,7 +19,7 @@ public class CricketCoach implements Coach{
 
 	@Override
 	public String getDailyFortune() {
-		return fortuneService.getFortune();
+		return fortuneService.getFortune()	;
 	}
 
 }
