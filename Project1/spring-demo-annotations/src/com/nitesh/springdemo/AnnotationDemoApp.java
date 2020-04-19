@@ -11,6 +11,12 @@ public class AnnotationDemoApp {
 		
 		//get bean
 		Coach theCoach= context.getBean("tennisCoach",Coach.class);
+		Coach alphaCoach= context.getBean("tennisCoach",Coach.class);
+		
+		if(theCoach== alphaCoach)
+			System.out.println("Are same");
+		else
+			System.out.println("Are different");
 		
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(theCoach.getDailyFortune());
