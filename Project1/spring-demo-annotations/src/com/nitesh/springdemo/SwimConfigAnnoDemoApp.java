@@ -10,10 +10,12 @@ public class SwimConfigAnnoDemoApp {
 				new AnnotationConfigApplicationContext(SportConfig.class);
 		
 		//get bean
-		Coach theCoach= context.getBean("swimCoach",Coach.class);
+		SwimCoach theCoach= context.getBean("swimCoach",SwimCoach.class);
 		
 		System.out.println(theCoach.getDailyWorkout());
 		System.out.println(theCoach.getDailyFortune());
+		System.out.println(theCoach.getEmail());
+		System.out.println(theCoach.getTeam());
 		
 		//close bean
 		context.close();
