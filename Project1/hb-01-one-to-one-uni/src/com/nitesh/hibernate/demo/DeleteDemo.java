@@ -8,7 +8,7 @@ import com.nitesh.hibernate.demo.entity.Instructor;
 import com.nitesh.hibernate.demo.entity.InstructorDetail;
 import com.nitesh.hibernate.demo.entity.Student;
 
-public class CreateDemo {
+public class DeleteDemo {
 	public static void main(String[] args) {
 		//create Session factory
 		SessionFactory factory= new Configuration()
@@ -22,23 +22,15 @@ public class CreateDemo {
 		
 		try {
 			
+			Instructor theInstructor= new Instructor("Shalini","Gupta","shalini@gmail.com");
+			InstructorDetail theInstructorDetail= new InstructorDetail("http://abc.com/youtube","painting");
 			
+			theInstructor.setInstructorDetail(theInstructorDetail);
 			session.beginTransaction();
-			
-			int theId=1;
-			Instructor theInstructor= session.get(Instructor.class, theId);
-			
-			System.out.println("Found Instructor: "+ theInstructor);
-			
-			//delete the instructor
-			if(theInstructor!=null) {
-				System.out.println("Deleting Instructor "+ theInstructor.getFirstName());
-				
-				//Note: Also delete associated instructor_details object since cascading is ON
-				session.delete(theInstructor);
-			}
-			
+			System.out.println("Saving instructor: "+ theInstructor);
+			session.save(theInstructor);
 			session.getTransaction().commit();
+			
 			System.out.println("Done Transaction");
 		}
 		finally {
