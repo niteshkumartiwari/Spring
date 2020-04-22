@@ -34,9 +34,20 @@ public class CreateDemo {
 			//No need to hit the DB again for the subsequent calls.
 			Instructor theInstructor= session.get(Instructor.class, theId);
 			System.out.println(theInstructor);
+			
+			//calling the getter method while session is still open
+			//Now data is in the memory
+			System.out.println("Courses: "+ theInstructor.getCourses());
+
+			session.getTransaction().commit();
+			
+			//close the session
+			session.close();
+			
+			//since courses are loaded lazily..this should fail
+			//lazy-Data
 			System.out.println("Courses: "+ theInstructor.getCourses());
 			
-			session.getTransaction().commit();
 			System.out.println("Done Transaction");
 		}
 		finally {
