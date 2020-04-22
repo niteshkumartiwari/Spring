@@ -33,7 +33,7 @@ public class CreateDemo {
 			//Everything is loaded(instructor,instructor_details,courses) all because of the EAGER loading.
 			//No need to hit the DB again for the subsequent calls.
 			Instructor theInstructor= session.get(Instructor.class, theId);
-			
+			System.out.println(theInstructor);
 			System.out.println("Courses: "+ theInstructor.getCourses());
 			
 			session.getTransaction().commit();
